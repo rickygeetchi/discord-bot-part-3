@@ -1,10 +1,21 @@
 import discord from 'discord.js';
-const token = "OTY5Mzc1NTgxNzg5NjUxMDA0.YmsfXA.XK3v3qPwoS7-XcfYnRaA-2Sn9yk"
+
+
 
 const client = new discord.Client({
     intents:['GUILDS','GUILD_MESSAGES'],
 });
 
+const token = "";
+/**
+ * @param {discord.Client} ready
+ */
+
+function onReady(ready){
+    if (ready){
+        console.log('Online')
+    }
+}
 
 
 /**
@@ -12,9 +23,11 @@ const client = new discord.Client({
  * @param {discord.Message} message 
  */
 function onMessage(message){
-if (message.content.includes("ping")) {
-    message.channel.send("pong")};
+    if (message.content.includes("ping")) {
+    message.channel.send("pong");
+    }
 }
 
 client.on('messageCreate', onMessage);
+client.on('ready',onReady);
 client.login(token);
