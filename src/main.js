@@ -6,7 +6,10 @@ const client = new discord.Client({
     intents:['GUILDS','GUILD_MESSAGES'],
 });
 
-const token = "";
+const BreakError = {}
+
+const answer = "WolfeWolfe"
+const token = "OTY5Mzc1NTgxNzg5NjUxMDA0.YmsfXA.GYGhJpHzSceJhmFvPDHBoya8d2g";
 /**
  * @param {discord.Client} ready
  */
@@ -18,15 +21,27 @@ function onReady(ready){
 }
 
 
+
 /**
  * 
  * @param {discord.Message} message 
  */
 function onMessage(message){
-    if (message.content.includes("ping")) {
-    message.channel.send("pong");
+    
+    if(message.author.id != client.user.id){
+        if (message.content.includes(answer)) {
+        message.channel.send("You've Answered Correctly!");
+        } else {
+            message.channel.send("Please try again");
+        }
+    } else{
+        return;
+    
     }
+     
 }
+
+
 
 client.on('messageCreate', onMessage);
 client.on('ready',onReady);
