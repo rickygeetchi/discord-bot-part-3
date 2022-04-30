@@ -9,7 +9,7 @@ const client = new discord.Client({
 const BreakError = {}
 
 const answer = "WolfeWolfe"
-const token = "OTY5Mzc1NTgxNzg5NjUxMDA0.YmsfXA.GYGhJpHzSceJhmFvPDHBoya8d2g";
+const token = "";
 /**
  * @param {discord.Client} ready
  */
